@@ -1,34 +1,27 @@
 name: Build and push birdnet-go-noavx2
-
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 4 * * 1"
-
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/birdnet-go-noavx2
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -36,9 +29,10 @@ jobs:
           file: ./noavx2/Dockerfile
           platforms: linux/amd64
           push: true
+          no-cache: true
           build-args: |
             BASE_IMAGE=ghcr.io/tphakala/birdnet-go:dev
-            TFLITE_ASSET_URL=https://github.com/spawnegit/tflite-no-avx2/releases/download/V3.0/libtensorflowlite_c.so
+            TFLITE_ASSET_URL=https://github.com/spawnegit/tflite-no-avx2/releases/download/V5.0/libtensorflowlite_c.so
           tags: |
             ${{ env.IMAGE_NAME }}:dev
             ${{ env.IMAGE_NAME }}:latest
