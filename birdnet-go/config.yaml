@@ -74,7 +74,7 @@ devices:
 environment:
   BIRDNET_GID: "0"
   BIRDNET_UID: "0"
-image: ghcr.io/tphakala/birdnet-go
+image: ghcr.io/spawnegit/birdnet-go-noavx2
 ingress: true
 ingress_entry: "ui/dashboard"
 ingress_stream: true
