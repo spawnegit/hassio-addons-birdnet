@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=ghcr.io/tphakala/birdnet-go:dev
 FROM ${BASE_IMAGE}
 
-ARG TFLITE_ASSET_URL=https://github.com/spawnegit/tflite-no-avx2/releases/download/V3.0/libtensorflowlite_c.so
+ARG TFLITE_ASSET_URL=https://github.com/spawnegit/tflite-no-avx2/releases/download/V4.0/libtensorflowlite_c.so
 
 USER root
 
