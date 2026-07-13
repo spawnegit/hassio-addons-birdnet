@@ -127,5 +127,5 @@ slug: birdnet-go
 udev: true
 url: https://github.com/spawnegit/hassio-addons-birdnet/tree/master/birdnet-go
 usb: true
-version: "dev.2"
+version: "dev"
 video: true
