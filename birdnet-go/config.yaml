@@ -76,6 +76,7 @@ environment:
   BIRDNET_UID: "0"
 image: ghcr.io/spawnegit/birdnet-go-noavx2
 ingress: true
+ingress_port: 8080
 ingress_stream: true
 init: false
 map:
@@ -126,5 +127,5 @@ slug: birdnet-go
 udev: true
 url: https://github.com/spawnegit/hassio-addons-birdnet/tree/master/birdnet-go
 usb: true
-version: "dev"
+version: "dev.2"
 video: true
